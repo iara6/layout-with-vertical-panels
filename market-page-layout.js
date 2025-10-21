@@ -12,4 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (homePanel) homePanel.classList.add('active');
+  
+});
+
+
+window.addEventListener('load', () => {
+  document.querySelector('.home-panel__content').classList.add('visible');
 });

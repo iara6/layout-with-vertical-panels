@@ -69,7 +69,7 @@ body {
   transition: all 500ms ease;
 }
 
-.panel p {
+.panel>p {
   transform: rotate(90deg);
   transform-origin: 0;
   transition: all 700ms ease;
@@ -87,11 +87,106 @@ body {
   
 }
 
+/* HOME PANEL */
+
 .home-panel {
   background-color: white;
   z-index: 10;
 }
 
+.home-panel__content {
+  opacity: 0;
+  transition: all 800ms ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.home__title p {
+  margin: 23vh 12vw 300px 8vw;
+  font-size: 5vw;
+  font-weight: 550;
+  font-family: "Antic Didone", serif;
+  /* line-height: 5.5rem; */
+  transform: scaleX(1.1) !important;
+}
+
+.background-image {
+  background-image: url(images/bg.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home__title-2 {
+  margin: 220px 0 100px 8vw;
+  font-size: 5.5vw;
+  font-weight: 550;
+  font-family: "Antic Didone", serif;
+  transform: scaleX(1.1) !important;
+}
+
+.home__market-info-grid {
+  margin: 0 5vw 100px 5vw;
+  /* margin-right: 12vw; */
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+  min-height: 60vh;
+}
+.home__market-info-grid>div {
+  border: 1px solid red;
+}
+
+.image-div-1 {
+  background-image: url(images/pic1.jpg);
+}
+.image-div-2 {
+  background-image: url(images/pic2.jpg);
+}
+.image-div-3 {
+  background-image: url(images/pic3.jpg);
+}
+
+.image-div-1,
+.image-div-2,
+.image-div-3 {
+  background-position: 50% 100%;
+  background-size: cover;
+  display: block;
+  height: 80%;
+  min-height: 550px;
+  width: 100%;
+}
+
+.grid-text {
+  margin: 30px 0 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  font-weight: 450;
+}
+
+.home__market-events {
+  display: flex;
+  align-items: center; 
+  justify-content: space-around;
+  margin: 0 5vw 100px 5vw;
+}
+
+.market-events-title {
+ /*  margin: 220px 0 100px 8vw; */
+  font-size: 5vw;
+  font-weight: 550;
+  font-family: "Antic Didone", serif;
+  transform: scaleX(1.1);
+}
+.emoticon {
+  font-size: 5rem;
+}
 .food-panel {
   background-color: var(--clr-blue);
   z-index: 75;
