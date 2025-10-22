@@ -131,16 +131,14 @@ body {
 
 .home__market-info-grid {
   margin: 0 5vw 100px 5vw;
-  /* margin-right: 12vw; */
-  border: 2px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 40px;
   min-height: 60vh;
 }
-.home__market-info-grid>div {
+/* .home__market-info-grid>div {
   border: 1px solid red;
-}
+} */
 
 .image-div-1 {
   background-image: url(images/pic1.jpg);
@@ -178,15 +176,107 @@ body {
 }
 
 .market-events-title {
- /*  margin: 220px 0 100px 8vw; */
   font-size: 5vw;
   font-weight: 550;
   font-family: "Antic Didone", serif;
   transform: scaleX(1.1);
 }
+
 .emoticon {
   font-size: 5rem;
 }
+
+.home__market-events-list {
+  position: relative;
+  margin: 0 5vw 0 5vw;
+}
+
+.double-dashed-border,
+.double-dashed-border-2 {
+  background-image: 
+    linear-gradient(to right, black 12px, transparent 12px), linear-gradient(to right, black 12px, transparent 12px);
+  background-position: 0 0, 0 14px;
+  background-size: 24px 1px; /* dash length, line thickness */
+  background-repeat: repeat-x;
+  padding: 10px;
+  
+  will-change: background-position;
+}
+.double-dashed-border {
+  animation: to-the-right 800ms linear infinite;
+}
+.double-dashed-border-2 {
+  animation: to-the-left 800ms linear infinite;
+}
+
+@keyframes to-the-right {
+  from {
+    background-position: 0 0, 0 14px;
+  }
+  to {
+    background-position: 24px 0, 24px 14px;
+  }
+}
+
+@keyframes to-the-left {
+  from { 
+    background-position: 0 0, 0 14px; 
+  }
+  to {
+    background-position: -24px 0, -24px 14px; 
+  }
+}
+
+.events {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+  padding: 75px 0 100px;
+}
+
+.events div {
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.events div p {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.see-all-button {
+  position: absolute;
+  z-index: 30;
+  background-color: white;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  width: 180px;
+  padding: 20px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.see-all-button:hover {
+  background-color: black;
+}
+.see-all-button:hover a {
+  color: white;
+}
+.see-all-button a {
+  text-decoration: none;
+  color: black;
+  transition: all 300ms ease;
+}
+
+.home__address {
+  margin: 30px 0;
+}
+
+/* *********************************** */
 .food-panel {
   background-color: var(--clr-blue);
   z-index: 75;
