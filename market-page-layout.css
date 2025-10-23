@@ -69,22 +69,26 @@ body {
   transition: all 500ms ease;
 }
 
-.panel>p {
+.panel .tab-name {
   transform: rotate(90deg);
-  transform-origin: 0;
-  transition: all 700ms ease;
-  /* border: 1px solid black; */
-  /* padding: 0.5rem 0.5rem 1.5rem; */
+  /* transform-origin: 0;  */
+  transform-origin: 10px 40px;
+  transition: opacity 300ms ease, transform 700ms ease;
+  border: 1px solid black;
   text-transform: capitalize;
-  /* font-size: clamp(0.9rem, 0.7rem + 1.2vw, 1.6rem); */
   font-size: clamp(0.9rem, 0.55rem + 1.4vw, 1.6rem);
   font-weight: 500;
-  position: absolute;
+  /* position: absolute; */
+  position: sticky; /*  */
+  width: fit-content; /*  */
   top: 0.5rem;
-  left: 1.2rem;
-  /* left: 10%; */
-  
-  
+  opacity: 1;
+  /* margin-left: 0.5rem; */
+  /* left: 3rem;  */
+ /* padding-bottom: 1rem; */
+ /* margin-bottom: -2rem; */
+  /* top: 0.5rem;
+  left: 1.2rem;  */
 }
 
 /* HOME PANEL */
@@ -108,7 +112,6 @@ body {
   font-size: 5vw;
   font-weight: 550;
   font-family: "Antic Didone", serif;
-  /* line-height: 5.5rem; */
   transform: scaleX(1.1) !important;
 }
 
@@ -136,9 +139,6 @@ body {
   column-gap: 40px;
   min-height: 60vh;
 }
-/* .home__market-info-grid>div {
-  border: 1px solid red;
-} */
 
 .image-div-1 {
   background-image: url(images/pic1.jpg);
@@ -231,7 +231,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 40px;
-  padding: 75px 0 100px;
+  padding: 65px 0 80px;
 }
 
 .events div {
@@ -273,7 +273,26 @@ body {
 }
 
 .home__address {
-  margin: 30px 0;
+  border: 1px solid goldenrod;
+  margin: 30px 5vw;
+  padding-inline: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+}
+
+.address {
+  padding: 90px 30px;
+  font-family: "Antic Didone", serif;
+  font-size: 3vw;
+  font-weight: 550;
+  transform: scaleX(1.1);
+  text-align: center;
+  max-width: 700px;
+}
+
+.map {
+  max-width: 700px;
 }
 
 /* *********************************** */
@@ -296,10 +315,10 @@ body {
   width: 88%;
 }
 
-.active p {
+.active .tab-name {
   transform: rotate(0);
+  margin-left: 2.5rem;
 }
-
 
 @media screen and (max-width: 800px) {
   .panel p {
