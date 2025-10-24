@@ -5,41 +5,59 @@ const homePanel = document.querySelector('.home-panel');
 const mainContainer = document.querySelector('.main-container');
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (homePanel) {
+    homePanel.classList.add('active');
+    const homeContent = homePanel.querySelector('.panel-content');
+    if (homeContent) homeContent.classList.add('visible');
+  };
+
+
+
   panels.forEach(panel => {
     panel.addEventListener('click', () => {
       panels.forEach(pnl => {
         pnl.classList.remove('active');
+        const panelContent = pnl.querySelector('.panel-content');
+
+        if (panelContent) panelContent.classList.remove('visible');
+
         const tab = pnl.querySelector('.tab-name');
         if (tab) tab.style.opacity = '1';
-
-        mainContainer.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }) 
+      }); 
 
       panel.classList.add('active');
+      /* mainContainer.scrollTop = 0; */
+
+      const panelContent = panel.querySelector('.panel-content');
+      if (panelContent) panelContent.classList.add('visible');
       
+      /* if (mainContainer) {
+        mainContainer.scrollTo({
+           top: 0,
+           behavior: 'smooth'
+         });
+      }; */
+
     });
   });
 
 
-  if (homePanel) homePanel.classList.add('active');
-
-  mainContainer.addEventListener('scroll', () => {
-    const activePanel = document.querySelector('.panel.active');
-    if (!activePanel) return;
-
-    const tabName = activePanel.querySelector('.tab-name');
-    if (!tabName) return;
-
-    if (mainContainer.scrollTop > 150) {
-      tabName.style.opacity = '0';
-    } else {
-      tabName.style.opacity = '1';
-    }
-  });
+/*  if (mainContainer) {
+   mainContainer.addEventListener('scroll', () => {
+     const activePanel = document.querySelector('.panel.active');
+     if (!activePanel) return;
   
+     const tabName = activePanel.querySelector('.tab-name');
+     if (!tabName) return;
+  
+     tabName.style.opacity = mainContainer.scrollTop > 150 ? '0' : '1';
+   });
+ } */
+
+  
+
+ 
+
 });
 
 
@@ -65,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
 }); */
 
 
-window.addEventListener('load', () => {
+/* window.addEventListener('load', () => {
   document.querySelector('.home-panel__content').classList.add('visible');
 });
-
+ */
 
