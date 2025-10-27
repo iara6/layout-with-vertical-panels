@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tab = pnl.querySelector('.tab-name');
         if (tab) tab.style.opacity = '1';
-      }); 
 
+      }); 
+      
       panel.classList.add('active');
-      /* mainContainer.scrollTop = 0; */
 
       const panelContent = panel.querySelector('.panel-content');
       if (panelContent) panelContent.classList.add('visible');
@@ -40,6 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
   });
+
+
+/* window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  console.log(scrollTop);
+  
+});  
+ */
 
 
 /*  if (mainContainer) {
