@@ -90,3 +90,8 @@ tabNames.forEach(tab => {
 });
  */
 
+
+/* COPYRIGHT DATE */
+
+const date = document.querySelector('.copyright-date');
+date.innerHTML = new Date().getFullYear();
