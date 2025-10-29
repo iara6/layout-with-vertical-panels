@@ -466,9 +466,27 @@ footer {
   min-width: 300px;
   width: 100%;
 }
-
+.zigzag-wrapper {
+  margin-inline: 5vw;
+  overflow-x: hidden;
+}
 .zigzag {
-  text-align: center;
+  display: flex;
+  width: max-content; 
+  animation: slide-zigzag 14s linear infinite;
+}
+
+.zigzag svg {
+   flex-shrink: 0;
+}
+
+@keyframes slide-zigzag {
+  from {
+    transform: translateX(0)
+  }
+  to {
+    transform: translateX(-50%)
+  }
 }
 
 /**************************/
