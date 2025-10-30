@@ -268,7 +268,8 @@ body {
 
 
 .see-all-button:hover,
-.click-here-button:hover {
+.click-here-button:hover,
+.food__vendor-container .click-here-button:hover {
   background-color: black;
 }
 .see-all-button:hover a,
@@ -324,7 +325,8 @@ body {
   object-fit: cover;
 }
 
-.home__vendor-container {
+.home__vendor-container,
+.food__vendor-container {
   text-align: center;
   font-family: var(--font-2);
   
@@ -337,7 +339,8 @@ body {
   margin-inline: 5vw;
   margin-bottom: 3.5rem;
 }
-.home__vendor-container p {
+.home__vendor-container p,
+.food__vendor-container p {
   font-size: 2.6rem;
 }
 .click-here-button {
@@ -345,7 +348,9 @@ body {
   margin-inline: auto;
   margin-top: 2rem;
 }
-
+.food__vendor-container .click-here-button {
+  background-color: var(--clr-blue);
+}
 .click-here-button a {
   font-family: var(--font-1);
   font-weight: 400;
@@ -407,7 +412,12 @@ footer {
 .email-container input {
   padding: 20px 30px;
   width: 100%;
+  border: 1px solid black;
 }
+.food__vendor-input {
+  background-color: var(--clr-blue);
+}
+
 .email-container input::placeholder {
   color: black;
   letter-spacing: 1px;
@@ -432,7 +442,6 @@ footer {
 .food-panel {
   background-color: var(--clr-blue);
   z-index: 75;
-  
 }
 
 .food__hours {
@@ -473,7 +482,7 @@ footer {
 .zigzag {
   display: flex;
   width: max-content; 
-  animation: slide-zigzag 14s linear infinite;
+  animation: slide-zigzag 15s linear infinite;
 }
 
 .zigzag svg {
@@ -487,6 +496,56 @@ footer {
   to {
     transform: translateX(-50%)
   }
+}
+
+.happy-hour-info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.happy-hour-info-container h2 {
+  font-size: 6rem;
+  text-transform: capitalize;
+  font-family: var(--font-2);
+  line-height: 1;
+}
+.happy-hour-info-container p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+.happy-hour-info-container i {
+  font-size: 10rem;
+  animation: up-and-down 1.5s linear infinite alternate;
+}
+
+@keyframes up-and-down {
+  0% {
+    transform: translateY(-30px)
+  }
+  100% {
+    transform: translateY(30px)
+  }
+}
+
+.food__businesses {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 7rem 5vw 8rem;
+}
+.food__businesses div {
+  cursor: pointer;
+}
+.food__businesses span {
+  font-size: 1.2rem;
+}
+.food__businesses h3 {
+  font-size: 2rem;
 }
 
 /**************************/
