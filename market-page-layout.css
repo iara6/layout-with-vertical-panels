@@ -39,7 +39,9 @@ body {
   flex-direction: column;
   min-height: 100%;
   width: 4%;
-  transition: all 500ms ease;
+  transition: all 600ms ease;
+
+  /* border: 5px solid lawngreen; */
 }
 
 .panel .tab-name {
@@ -97,12 +99,18 @@ body {
 }
 
 .panel-content {
-  opacity: 0;
+ /*  opacity: 0; */
+  display: none;
+  /* visibility: hidden;   */
+  pointer-events: none;
   transition: opacity 600ms ease 400ms;
 }
 
 .visible {
-  opacity: 1;
+  /* opacity: 1; */
+ /*  visibility: visible; */
+  display: block;
+  pointer-events: auto; 
 }
 
 .panel-content:not(.visible) {
@@ -442,6 +450,7 @@ footer {
 .food-panel {
   background-color: var(--clr-blue);
   z-index: 75;
+  /* height: min-content; */
 }
 
 .food__hours {
@@ -562,6 +571,8 @@ footer {
 
 .active {
   width: 88%;
+/*   height: min-content;
+  overflow: hidden; */
 }
 
 .active .tab-name {
