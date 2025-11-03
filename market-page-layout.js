@@ -8,17 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (homePanel) {
     homePanel.classList.add('active');
     const homeContent = homePanel.querySelector('.panel-content');
+
     if (homeContent) homeContent.classList.add('visible');
   };
 
-/*   let contentDelay;  */
+  let contentDelay; 
 
   panels.forEach(panel => {
-     /*    const panelContent = panel.querySelector('.panel-content');
+    const panelContent = panel.querySelector('.panel-content');
+
     if (panelContent) {
       panelContent.addEventListener('click', e => e.stopPropagation());
-    } */
-    panel.addEventListener('click', () => {
+    }
+
+    panel.addEventListener('click', (e) => {
+      const clickedTab = e.target.closest('.tab-name');
+
+      if (clickedTab && panel.classList.contains('active')) {
+        if (mainContainer) {
+          mainContainer.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+        return; 
+      } 
+
       panels.forEach(pnl => {
         pnl.classList.remove('active');
         const panelContent = pnl.querySelector('.panel-content');
@@ -27,29 +42,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tab = pnl.querySelector('.tab-name');
         if (tab) tab.style.opacity = '1';
-
       }); 
        
       panel.classList.add('active');
 
       const panelContent = panel.querySelector('.panel-content');
       
-
-/*       if (contentDelay) {
+      if (contentDelay) {
         clearTimeout(contentDelay);
       }
+
       contentDelay = setTimeout(() => {
-      if (panelContent) panelContent.classList.add('visible');
-    }, 600); */
-      if (panelContent) panelContent.classList.add('visible');
-      
+        if (panelContent) panelContent.classList.add('visible');
+      }, 500);
     });
   });
-
-
 });
 
-function toTop() { /* check */
+/* function toTop() { 
   const mainContainer = document.querySelector('.main-container');
   if (mainContainer) {
     mainContainer.scrollTo({
@@ -62,18 +72,17 @@ function toTop() { /* check */
 const tabNames = document.querySelectorAll('.tab-name');
 tabNames.forEach(tab => {
   tab.addEventListener('click', toTop);
-})
+}) */
 
-
-/* window.addEventListener('load', () => {
-  document.querySelector('.home-panel__content').classList.add('visible');
-});
- */
 
 
 /* COPYRIGHT DATE */
 
-const date = document.querySelector('.copyright-date');
-date.innerHTML = new Date().getFullYear();
+const date = document.querySelectorAll('.copyright-date');
+const year = new Date().getFullYear();
+
+date.forEach(d => {
+  d.textContent = year;
+});
 
 

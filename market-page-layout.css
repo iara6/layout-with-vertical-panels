@@ -277,7 +277,8 @@ body {
 
 .see-all-button:hover,
 .click-here-button:hover,
-.food__vendor-container .click-here-button:hover {
+.food__vendor-container .click-here-button:hover,
+.retail__vendor-container .click-here-button:hover {
   background-color: black;
 }
 .see-all-button:hover a,
@@ -334,7 +335,8 @@ body {
 }
 
 .home__vendor-container,
-.food__vendor-container {
+.food__vendor-container,
+.retail__vendor-container {
   text-align: center;
   font-family: var(--font-2);
   
@@ -348,7 +350,8 @@ body {
   margin-bottom: 3.5rem;
 }
 .home__vendor-container p,
-.food__vendor-container p {
+.food__vendor-container p,
+.retail__vendor-container p {
   font-size: 2.6rem;
 }
 .click-here-button {
@@ -444,16 +447,17 @@ footer {
   padding: 30px 0;
 }
 
-/**************/
-/* FOOD PANEL */
-/**************/
+/*******************************/
+/* FOOD PANEL *** RETAIL PANEL */
+/*******************************/
 .food-panel {
   background-color: var(--clr-blue);
   z-index: 75;
   /* height: min-content; */
 }
 
-.food__hours {
+.food__hours,
+.retail__hours {
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -461,25 +465,29 @@ footer {
   padding: 2rem 4rem;
 }
 
-.food__title-image {
+.food__title-image,
+.retail__title-image {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   column-gap: 1rem;
   margin-inline: 5vw;
   margin-bottom: 8rem;
 }
-.food-title {
+.food-title,
+.retail-title {
   text-transform: capitalize;
   font-size: 12rem;
   font-family: var(--font-2);
   line-height: 12rem;
 }
 
-.food-image-container {
+.food-image-container,
+.retail-image-container {
   text-align: right;
 }
 
-.food-image-container img {
+.food-image-container img,
+.retail-image-container img {
   max-width: 400px;
   min-width: 300px;
   width: 100%;
@@ -507,27 +515,32 @@ footer {
   }
 }
 
-.happy-hour-info-container {
+.happy-hour-info-container,
+.the-best-info-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   text-align: center;
   margin: 4rem 0;
 }
-
 .happy-hour-info-container h2 {
-  font-size: 6rem;
   text-transform: capitalize;
+}
+.happy-hour-info-container h2,
+.the-best-info-container h2 {
+  font-size: 6rem;
   font-family: var(--font-2);
   line-height: 1;
 }
-.happy-hour-info-container p {
+.happy-hour-info-container p,
+.the-best-info-container p {
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
   margin-top: 1rem;
 }
-.happy-hour-info-container i {
+.happy-hour-info-container i,
+.the-best-info-container i {
   font-size: 10rem;
   animation: up-and-down 1.5s linear infinite alternate;
 }
@@ -541,29 +554,40 @@ footer {
   }
 }
 
-.food__businesses {
+.food__businesses,
+.retail__businesses {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   margin: 7rem 5vw 8rem;
 }
-.food__businesses div {
+.food__businesses div,
+.retail__businesses div {
   cursor: pointer;
 }
-.food__businesses span {
+.food__businesses span,
+.retail__businesses span {
   font-size: 1.2rem;
 }
-.food__businesses h3 {
+.food__businesses h3,
+.retail__businesses h3 {
   font-size: 2rem;
 }
 
-/**************************/
+/****************/
+/* RETAIL PANEL */
+/****************/
 
 .retail-panel {
   background-color: var(--clr-red);
   z-index: 50;
 }
-
+.retail__vendor-container .click-here-button {
+  background-color: var(--clr-red);
+}
+.retail__vendor-input {
+  background-color: var(--clr-red);
+}
 .community-panel {
   background-color: var(--clr-orange);
   z-index: 25;
