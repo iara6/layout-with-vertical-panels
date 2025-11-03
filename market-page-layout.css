@@ -457,7 +457,8 @@ footer {
 }
 
 .food__hours,
-.retail__hours {
+.retail__hours,
+.community__hours {
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -474,7 +475,8 @@ footer {
   margin-bottom: 8rem;
 }
 .food-title,
-.retail-title {
+.retail-title,
+.comminity-title {
   text-transform: capitalize;
   font-size: 12rem;
   font-family: var(--font-2);
@@ -588,9 +590,16 @@ footer {
 .retail__vendor-input {
   background-color: var(--clr-red);
 }
+
+/*******************/
+/* COMMUNITY PANEL */
+/*******************/
 .community-panel {
   background-color: var(--clr-orange);
   z-index: 25;
+}
+.comminity-title {
+  margin: 4rem 5vw 8rem;
 }
 
 .active {
