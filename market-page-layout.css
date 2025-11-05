@@ -538,31 +538,36 @@ footer {
 }
 
 .happy-hour-info-container,
-.the-best-info-container {
+.the-best-info-container,
+.market-radio-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   text-align: center;
   margin: 4rem 0;
 }
-.happy-hour-info-container h2 {
+.happy-hour-info-container h2,
+.market-radio-container h2{
   text-transform: capitalize;
 }
 .happy-hour-info-container h2,
-.the-best-info-container h2 {
+.the-best-info-container h2,
+.market-radio-container h2 {
   font-size: 6rem;
   font-family: var(--font-2);
   line-height: 1;
 }
 .happy-hour-info-container p,
-.the-best-info-container p {
+.the-best-info-container p,
+.market-radio-container p {
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
   margin-top: 1rem;
 }
 .happy-hour-info-container i,
-.the-best-info-container i {
+.the-best-info-container i,
+.market-radio-container i {
   font-size: 10rem;
   animation: up-and-down 1.5s linear infinite alternate;
 }
@@ -674,27 +679,81 @@ footer {
   line-height: 1;
 }
 
-.view-all-button {
+.view-all-button,
+.view-all-stories {
   background-color: var(--clr-orange);
   border: 1px solid black;
   width: auto;
   padding: 18px;
-  margin-inline: 5vw;
+  margin: 0 5vw 10rem;
   letter-spacing: 0.3px;
   text-align: center;
   cursor: pointer;
   transition: all 300ms ease;
 }
 
-.view-all-button a {
+.view-all-button a,
+.view-all-stories a {
   text-decoration: none;
   color: black;
   transition: all 300ms ease;
 }
 
-.view-all-button:hover {
+.view-all-button:hover,
+.view-all-stories:hover {
   background-color: black;
 }
-.view-all-button:hover a {
+.view-all-button:hover a,
+.view-all-stories:hover a {
   color: white;
+}
+.features-title {
+  font-size: 5rem;
+  font-family: var(--font-2);
+  margin-left: 5vw;
+  margin-bottom: 3rem;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 5vw 5rem;
+  column-gap: 70px;
+  row-gap: 100px;
+}
+.features-container div {
+  height: 400px;
+  position: relative;
+}
+
+.features-container div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features-container div span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1.5rem;
+  width: max-content;
+ 
+  z-index: 10;
+  background-color: white;
+  padding: 0.8rem;
+  font-size: 1.8rem;
+}
+
+.view-all-stories {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.market.see-all-button {
+  background-color: var(--clr-orange);
+}
+.market.home__market-events-list {
+  margin-bottom: 3rem;
 }
