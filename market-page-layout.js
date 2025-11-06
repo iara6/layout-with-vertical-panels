@@ -75,7 +75,6 @@ tabNames.forEach(tab => {
 }) */
 
 
-
 /* COPYRIGHT DATE */
 
 const date = document.querySelectorAll('.copyright-date');
