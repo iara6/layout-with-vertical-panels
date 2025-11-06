@@ -40,8 +40,6 @@ body {
   min-height: 100%;
   width: 4%;
   transition: all 600ms ease;
-
-  /* border: 5px solid lawngreen; */
 }
 
 .panel .tab-name {
@@ -278,7 +276,8 @@ body {
 .see-all-button:hover,
 .click-here-button:hover,
 .food__vendor-container .click-here-button:hover,
-.retail__vendor-container .click-here-button:hover {
+.retail__vendor-container .click-here-button:hover,
+.community__vendor-container .click-here-button:hover {
   background-color: black;
 }
 .see-all-button:hover a,
@@ -355,7 +354,8 @@ animation: dash-border 500ms linear infinite;
 
 .home__vendor-container,
 .food__vendor-container,
-.retail__vendor-container {
+.retail__vendor-container,
+.community__vendor-container {
   text-align: center;
   font-family: var(--font-2);
   
@@ -371,7 +371,8 @@ animation: dash-border 500ms linear infinite;
 }
 .home__vendor-container p,
 .food__vendor-container p,
-.retail__vendor-container p {
+.retail__vendor-container p,
+.community__vendor-container p {
   font-size: 2.6rem;
 }
 .click-here-button {
@@ -491,8 +492,16 @@ footer {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   column-gap: 1rem;
+  align-items: center;
   margin-inline: 5vw;
   margin-bottom: 8rem;
+  position: relative;
+}
+.chinese {
+  position: absolute;
+  font-size: 4rem;
+  right: 25%;
+  top: -8%;
 }
 .food-title,
 .retail-title,
@@ -565,13 +574,18 @@ footer {
   letter-spacing: 1px;
   margin-top: 1rem;
 }
-.happy-hour-info-container i,
-.the-best-info-container i,
-.market-radio-container i {
+.happy-hour-info-container i:first-child,
+.the-best-info-container i:first-child,
+.market-radio-container i:first-child {
   font-size: 10rem;
   animation: up-and-down 1.5s linear infinite alternate;
 }
-
+.fa-face-smile-beam,
+.fa-bag-shopping,
+.fa-microphone {
+  font-size: 10rem;
+  animation: up-and-down-2 1.5s linear infinite alternate;
+}
 @keyframes up-and-down {
   0% {
     transform: translateY(-30px)
@@ -580,7 +594,14 @@ footer {
     transform: translateY(30px)
   }
 }
-
+@keyframes up-and-down-2 {
+  0% {
+    transform: translateY(30px)
+  }
+  100% {
+    transform: translateY(-30px)
+  }
+}
 .food__businesses,
 .retail__businesses {
   display: grid;
@@ -622,6 +643,15 @@ footer {
 .community-panel {
   background-color: var(--clr-orange);
   z-index: 25;
+}
+.community__hours {
+  position: relative;
+}
+.chinese-community {
+  position: absolute;
+  font-size: 4rem;
+  right: 25%;
+  bottom: -45%;
 }
 .comminity-title {
   margin: 4rem 5vw 8rem;
@@ -754,6 +784,19 @@ footer {
 .market.see-all-button {
   background-color: var(--clr-orange);
 }
+.market.see-all-button:hover {
+  background-color: black;
+}
 .market.home__market-events-list {
   margin-bottom: 3rem;
+}
+.community__vendor-container {
+  margin: 5rem 0;
+}
+.community__vendor-container .click-here-button {
+  background-color: var(--clr-orange);
+}
+
+.community__vendor-input {
+  background-color: var(--clr-orange);
 }
